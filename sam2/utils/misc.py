@@ -171,8 +171,8 @@ class AsyncVideoFrameLoader:
 def preprocess_video_sequence(
     video_array: np.ndarray,
     img_size: int = 512,
-    img_mean: Tuple[float, float, float] = (0.485, 0.456, 0.406),
-    img_std: Tuple[float, float, float] = (0.229, 0.224, 0.225),
+    img_mean = (0.485, 0.456, 0.406),
+    img_std = (0.229, 0.224, 0.225),
     compute_device = torch.device("cuda"),
     offload_video_to_cpu = False,    
 ):
