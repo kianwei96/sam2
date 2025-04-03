@@ -15,9 +15,6 @@ from tqdm import tqdm
 from sam2.modeling.sam2_base import NO_OBJ_SCORE, SAM2Base
 from sam2.utils.misc import concat_points, fill_holes_in_mask_scores, load_video_frames, preprocess_video_sequence
 
-from nptyping import NDArray, Shape, UInt8
-from typing import Any, Tuple, Union 
-
 class SAM2VideoPredictor(SAM2Base):
     """The predictor class to handle user interactions and manage inference states."""
 
@@ -43,7 +40,7 @@ class SAM2VideoPredictor(SAM2Base):
     @torch.inference_mode()
     def init_state(
         self,
-        video_array: NDArray[Shape["Any, Any, Any, 3"], Uint8],
+        video_array,
         offload_video_to_cpu=False,
         offload_state_to_cpu=False,
         async_loading_frames=False,

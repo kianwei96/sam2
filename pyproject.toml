@@ -2,7 +2,5 @@
 requires = [
     "setuptools>=61.0",  
     "torch>=2.5.1",
-    "opencv-contrib-python",
-    "nptyping",
     ]
 build-backend = "setuptools.build_meta"
