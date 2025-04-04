@@ -179,7 +179,7 @@ def preprocess_video_sequence(
     video_array = np.array([np.array(Image.fromarray(img).resize((img_size, img_size))) for img in video_array])
     # video_array = np.array([cv2.resize(img, (img_size, img_size)) for img in video_array])
     video_array = video_array.transpose(0, 3, 1, 2).astype(np.float32) # bxcxhxw convention
-    images = torch.from_numpy(video_array).to(torch.float32)
+    images = torch.from_numpy(video_array).to(torch.float32) / 255
     img_mean = torch.tensor(img_mean, dtype=torch.float32)[:, None, None]
     img_std = torch.tensor(img_std, dtype=torch.float32)[:, None, None]    
 
